@@ -6,5 +6,10 @@ import numpy as np
 
 # Create subsections 
 header = st.container()
+dataset = st.container()
+syptoms = st.container()
+
+
+
 with header:
     st.title("BlueZayn's Disease Prediction Model")
