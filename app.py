@@ -16,8 +16,8 @@ with header:
 
 
 with syptomps:
-    st.header("What symptoms are yo experiencing?")
+    st.header("What symptoms are you experiencing?")
     st.markdown("Select the symptomps below")
      # Create input colums
     sel_col, disp_col = st.columns(2)   
-    symp = sel_col.select_slider("Symptoms", options=[])
+    symp = sel_col.selectbox("Symptoms", options=["rash", "Vomiting", "headach"])
