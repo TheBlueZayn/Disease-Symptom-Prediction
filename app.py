@@ -72,10 +72,26 @@ with header:
 st.sidebar.header("What are your symptoms?")
 
 def user_input_symp():
-    symp_1 = st.sidebar.selectbox("Symptom_1", options= ["rash" , "headache", "vomiting"])
+    symp_1 = st.sidebar.selectbox("Symptom_1", options= [np.nan, "skin_rash" , "headache", "vomiting"])
+    symp_2 = st.sidebar.selectbox("Symptom_2", options= [np.nan,"skin_rash" , "headache", "vomiting"])
+    symp_3 = st.sidebar.selectbox("Symptom_3", options= [np.nan,"skin_rash" , "headache", "vomiting"])
+    symp_4 = st.sidebar.selectbox("Symptom_4", options= [np.nan,"skin_rash" , "headache", "vomiting"])
+    symp_5 = st.sidebar.selectbox("Symptom_5", options= [np.nan,"skin_rash" , "headache", "vomiting"])
+    symp_6 = st.sidebar.selectbox("Symptom_6", options= [np.nan,"skin_rash" , "headache", "vomiting"])
+    symp_7 = st.sidebar.selectbox("Symptom_7", options= [np.nan,"skin_rash" , "headache", "vomiting"])
+    symp_8 = st.sidebar.selectbox("Symptom_8", options= [np.nan,"skin_rash" , "headache", "vomiting"])
+    symp_9 = st.sidebar.selectbox("Symptom_9", options= [np.nan,"skin_rash" , "headache", "vomiting"])
+    symp_10 = st.sidebar.selectbox("Symptom_10", options= [np.nan,"skin_rash" , "headache", "vomiting"])
+    symp_11 = st.sidebar.selectbox("Symptom_11", options= [np.nan,"skin_rash" , "headache", "vomiting"])
+    symp_12 = st.sidebar.selectbox("Symptom_12", options= [np.nan,"skin_rash" , "headache", "vomiting"])
+    symp_13 = st.sidebar.selectbox("Symptom_13", options= [np.nan,"skin_rash" , "headache", "vomiting"])
+    symp_14 = st.sidebar.selectbox("Symptom_14", options= [np.nan,"skin_rash" , "headache", "vomiting"])
+    symp_15 = st.sidebar.selectbox("Symptom_15", options= [np.nan,"skin_rash" , "headache", "vomiting"])
+    symp_16 = st.sidebar.selectbox("Symptom_16", options= [np.nan,"skin_rash" , "headache", "vomiting"])
+    symp_17 = st.sidebar.selectbox("Symptom_17", options= [np.nan,"skin_rash" , "headache", "vomiting"])
 
 
-    data = {"Symptom_1": symp_1}
+    data = {"Symptom_1": symp_1, "Symptom_2": symp_2, "Symptom_3": symp_3, "Symptom_4": symp_4, "Symptom_5": symp_5, "Symptom_6": symp_6, "Symptom_7": symp_7, "Symptom_8": symp_8, "Symptom_9": symp_9, "Symptom_10": symp_10, "Symptom_11": symp_11, "Symptom_12": symp_12, "Symptom_13": symp_13, "Symptom_14": symp_14, "Symptom_15": symp_15, "Symptom_16": symp_16, "Symptom_17": symp_17}
 
     sympts = pd.DataFrame(data, index=[0])
     return sympts
@@ -94,7 +110,7 @@ standardized_df = scaler.transform(df)
 d = rfc_classifier.predict(standardized_df).item()
 d = d.strip().replace(" ", "_")
 
-st.write("The predicted Disease is")
+st.write("The predicted Disease is:")
 st.write(d)
 
 # Display description of predicted disease
