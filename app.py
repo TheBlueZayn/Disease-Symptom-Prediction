@@ -108,13 +108,25 @@ st.subheader("Predicted Disease")
 df = encode_symptoms(df, df_4)
 standardized_df = scaler.transform(df)
 d = rfc_classifier.predict(standardized_df).item()
-d = d.strip().replace(" ", "_")
+d = d.strip().replace("_", " ")
 
-st.write("The predicted Disease is:")
+#st.write("The predicted Disease is:")
 st.write(d)
 
 # Display description of predicted disease
 st.subheader("Desription of Predicted Disease")
+descr = (df_2[df_2["Disease"] == d]["Description"].item())
+st.write(descr)
+
 
 # Display Precautions to take
 st.subheader("Precautions to take!")
+prec_1 = df_3[df_3["Disease"] == d]["Precaution_1"].item().title()
+prec_2 = df_3[df_3["Disease"] == d]["Precaution_2"].item().title()
+prec_3 = df_3[df_3["Disease"] == d]["Precaution_3"].item().title()
+prec_4 = df_3[df_3["Disease"] == d]["Precaution_4"].item().title()
+
+st.write(prec_1)
+st.write(prec_2)
+st.write(prec_3)
+st.write(prec_4)
