@@ -15,7 +15,7 @@ with header:
     st.title("BlueZayn's Disease Prediction Model")
 
 
-#with syptomps:
+with syptomps:
     st.header("What symptoms are you experiencing?")
     #st.markdown("Select the symptoms below")
      # Create input colums
@@ -33,6 +33,6 @@ with header:
 
 
 
-    disp_col_1.write("Your symptoms are:")
-    disp_col_1.write(symp_1)
-    disp_col_1.write(symp_2)
+    #disp_col_1.write("Your symptoms are:")
+    #disp_col_1.write(symp_1)
+    #disp_col_1.write(symp_2)
