@@ -13,6 +13,7 @@ syptomps = st.container()
 
 with header:
     st.title("BlueZayn's Disease Prediction Model")
+    st.markdown("Takes in symptoms and predicts a  disease, it's description and precautions")
 
 
 #with syptomps:
@@ -46,7 +47,18 @@ def user_input_symp():
     sympts = pd.DataFrame(data, index=[0])
     return sympts
 
-
+#Display symptoms dataframe
 df = user_input_symp()
 st.subheader("Your Symptoms")
 st.write(df)
+
+#Display predicted disease
+st.subheader("Predicted Disease")
+
+#st.write()
+
+# Display description of predicted disease
+st.subheader("Desription of Predicted Disease")
+
+# Display Precautions to take
+st.subheader("Precautions to take!")
