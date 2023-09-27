@@ -70,8 +70,22 @@ Y = new_df_1['Disease']
 
 # Data Standardization
 scaler = StandardScaler()
+scaler.fit(X)
+# Set standardized data
+standardized_data = scaler.transform(X)
+X = standardized_data
+Y = new_df_1['Disease']
 
+# Train Model
+from sklearn.ensemble import RandomForestClassifier
+# Split the data into training and testing sets
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=42)
 
+# Create a Random Forest Classifier
+rfc_classifier = RandomForestClassifier(n_estimators=100, random_state=42)
+
+# Fit the model on the training data
+rfc_classifier.fit(X_train, Y_train)
 #st.write()
 
 # Display description of predicted disease
