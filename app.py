@@ -13,37 +13,6 @@ df_2 = pd.read_csv("symptom_Description.csv")
 df_3 = pd.read_csv("symptom_precaution.csv")
 df_4 = pd.read_csv("Symptom-severity.csv")
 
-# Create subsections 
-header = st.container()
-# dataset = st.container()
-# syptomps = st.container()
-
-
-
-with header:
-    st.title("BlueZayn's Disease Prediction Model")
-    st.markdown("Takes in symptoms and predicts a  disease, it's description and precautions")
-
-
-st.sidebar.header("What are your symptoms?")
-
-def user_input_symp():
-    symp_1 = st.sidebar.selectbox("Symptom_1", options= ["rash" , "headache", "vomiting"])
-
-
-    data = {"Symptom_1": symp_1}
-
-    sympts = pd.DataFrame(data, index=[0])
-    return sympts
-
-#Display symptoms dataframe
-df = user_input_symp()
-st.subheader("Your Symptoms")
-st.write(df)
-
-#Display predicted disease
-st.subheader("Predicted Disease")
-
 # Encode symptomps with severity
 def encode_symptoms(df, df_4):
     for i in df_4.index:
@@ -86,7 +55,47 @@ rfc_classifier = RandomForestClassifier(n_estimators=100, random_state=42)
 
 # Fit the model on the training data
 rfc_classifier.fit(X_train, Y_train)
-#st.write()
+
+
+# Create subsections 
+header = st.container()
+# dataset = st.container()
+# syptomps = st.container()
+
+
+
+with header:
+    st.title("BlueZayn's Disease Prediction Model")
+    st.markdown("Takes in symptoms and predicts a  disease, it's description and precautions")
+
+
+st.sidebar.header("What are your symptoms?")
+
+def user_input_symp():
+    symp_1 = st.sidebar.selectbox("Symptom_1", options= ["rash" , "headache", "vomiting"])
+
+
+    data = {"Symptom_1": symp_1}
+
+    sympts = pd.DataFrame(data, index=[0])
+    return sympts
+
+#Display symptoms dataframe
+df = user_input_symp()
+st.subheader("Your Symptoms")
+st.write(df)
+
+#Display predicted disease
+st.subheader("Predicted Disease")
+
+# Predict disease
+df = encode_symptoms(df, df_4)
+standardized_df = scaler.transform(df)
+d = rfc_classifier.predict(standardized_df).item()
+d = d.strip().replace(" ", "_")
+
+st.write("The predicted Disease is")
+st.write(d)
 
 # Display description of predicted disease
 st.subheader("Desription of Predicted Disease")
