@@ -15,16 +15,16 @@ with header:
     st.title("BlueZayn's Disease Prediction Model")
 
 
-with syptomps:
+#with syptomps:
     st.header("What symptoms are you experiencing?")
-    st.markdown("Select the symptoms below")
+    #st.markdown("Select the symptoms below")
      # Create input colums
-    sel_col_1, disp_col_1 = st.columns(2) 
+    #sel_col_1, disp_col_1 = st.columns(2) 
 
-    symp_1 = sel_col_1.selectbox("Symptoms", options=["rash", "Vomiting", "headache", "cough"])
+   # symp_1 = sel_col_1.selectbox("Symptoms", options=["rash", "Vomiting", "headache", "cough"])
 
-    sel_col_2, disp_col = st.columns(2) 
-    symp_2 = sel_col_2.selectbox("More Symptoms", options=["body_rash", "Vomiting", "headache", "cough"])
+   # sel_col_2, disp_col = st.columns(2) 
+    #symp_2 = sel_col_2.selectbox("More Symptoms", options=["body_rash", "Vomiting", "headache", "cough"])
 
     
     #sel_col_3, disp_col_3 = st.columns(2) 
