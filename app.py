@@ -105,14 +105,14 @@ def user_input_symp():
 
 
 #Display symptoms dataframe
-df = user_input_symp()
 st.subheader("Your Symptoms")
+df = user_input_symp()
 
 st.sidebar.button("Reset")
 if st.sidebar.button('Predict'):
     st.write(df)
 else:
-    st.write('Goodbye')
+    st.sidebar.write('input symptoms')
 #
 # st.sidebar.button("Predict", on_click= df)
 
