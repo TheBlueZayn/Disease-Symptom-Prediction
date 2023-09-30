@@ -113,20 +113,23 @@ with symptomps:
 
 
 # Make submit button (This makes the prediction faster and load at once)
-    if st.sidebar.button('Predict'):
-        st.write(df)
-#else:
-    #st.sidebar.write('input new symptoms')
-
-# Make reset button that clears all inputs    
-#st.sidebar.button("Reset")
-
+# Make reset button that clears all inputs 
     def reset():
         st.sidebar.selectbox = np.nan
         st.markdown("Waiting for your symptoms!")
+
+    if st.sidebar.button('Predict'):
+        st.write(df)
+    else:
+        st.sidebar.button('Reset', on_click=reset)
+
+   
+#st.sidebar.button("Reset")
+
+
     #symp_1 = np.nan
 
-        st.sidebar.button('Reset', on_click=reset)
+        #st.sidebar.button('Reset', on_click=reset)
 
 # st.sidebar.button("Predict", on_click= df)
 
