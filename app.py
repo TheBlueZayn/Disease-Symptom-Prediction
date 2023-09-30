@@ -106,22 +106,24 @@ def user_input_symp():
 
 #Display symptoms dataframe
 symptomps = st.container()
+
 with symptomps:
     st.subheader("Your Symptoms")
-
     df = user_input_symp()
-
 
 # Make submit button (This makes the prediction faster and load at once)
 # Make reset button that clears all inputs 
-    def reset():
-        st.sidebar.selectbox = np.nan
-        st.markdown("Waiting for your symptoms!")
+   # def reset():
+        #symp_1 = np.nan
+        #st.sidebar.selectbox = np.nan
+        #st.markdown("Waiting for your symptoms!")
 
     if st.sidebar.button('Predict'):
-        st.write(df)
+        st.write(df)  
     else:
-        st.sidebar.button('Reset', on_click=reset)
+         st.markdown("Waiting for your symptoms!")  
+    
+    #st.sidebar.button('Reset', on_click=reset)    
 
    
 #st.sidebar.button("Reset")
