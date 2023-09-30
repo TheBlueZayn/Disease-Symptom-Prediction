@@ -66,7 +66,7 @@ header = st.container()
 
 with header:
     st.title("BlueZayn's Disease Prediction Model")
-    st.markdown("Takes in symptoms and predicts a  disease, it's description and precautions")
+    st.markdown("Takes in symptoms and predicts a  disease, gives a description and precautions to take")
 
 
 st.sidebar.header("What are your symptoms?")
@@ -105,7 +105,7 @@ def user_input_symp():
 
 
 #Display symptoms dataframe
-symptomps = st.container
+symptomps = st.container()
 with symptomps:
     st.subheader("Your Symptoms")
 
@@ -139,10 +139,10 @@ st.subheader("Predicted Disease")
 df = encode_symptoms(df, df_4)
 standardized_df = scaler.transform(df)
 d = rfc_classifier.predict(standardized_df).item()
-d = d.strip().replace("_", " ")
+d_strip = d.strip().replace("_", " ")
 
 #st.write("The predicted Disease is:")
-st.write(d)
+st.write(d_strip)
 
 # Display description of predicted disease
 st.subheader("Desription of Predicted Disease")
