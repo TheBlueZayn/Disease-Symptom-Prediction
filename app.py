@@ -58,14 +58,16 @@ rfc_classifier = RandomForestClassifier(n_estimators=100, random_state=42)
 rfc_classifier.fit(X_train, Y_train)
 
 
-image = Image.open()
+image = Image.open("ml.jpg")
+
+
+
+st.chat_message("Bluezayn")
+
+
 
 # Create subsections 
 header = st.container()
-# dataset = st.container()
-# syptomps = st.container()
-
-
 
 with header:
     st.title("BlueZayn's Disease Prediction Model")
@@ -177,9 +179,9 @@ st.write(prec_4)
 
 
 # Ask question
-st.subheader("Are you on any medications")
+st.subheader("Are you on any medications?")
 st.text_input("Name of drugs")
 
 
 
-st.download_button("Download a report of your symptom analysis")
+#st.download_button("Download a report of your symptom analysis", data=)
