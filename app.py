@@ -6,6 +6,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report,confusion_matrix,accuracy_score
 from sklearn.metrics import precision_score, recall_score, f1_score
+from PIL import Image
 
 # Load Data
 df_1 = pd.read_csv("dataset.csv")
@@ -57,6 +58,8 @@ rfc_classifier = RandomForestClassifier(n_estimators=100, random_state=42)
 rfc_classifier.fit(X_train, Y_train)
 
 
+image = Image.open()
+
 # Create subsections 
 header = st.container()
 # dataset = st.container()
@@ -66,21 +69,22 @@ header = st.container()
 
 with header:
     st.title("BlueZayn's Disease Prediction Model")
+    st.image(image)
     st.markdown("Takes in symptoms and predicts a  disease, gives a description and some precautions to take")
 
 
 st.sidebar.header("What are your symptoms?")
 st.sidebar.markdown("Select your symptoms")
-st.sidebar.markdown("Press the predict botton below when done")
+st.sidebar.markdown("Scroll down to predict")
 
 
-options = st.sidebar.multiselect(
-    'What are your favorite colors',
-    [np.nan,'Green', 'Yellow', 'Red', 'Blue'],
-    [np.nan])
+# options = st.sidebar.multiselect(
+#     'What are your favorite colors',
+#     [np.nan,'Green', 'Yellow', 'Red', 'Blue'],
+#     [np.nan])
 
-data_1 = options
-st.write(data_1)
+# data_1 = options
+# st.write(data_1)
 #sympts_1 = pd.DataFrame(data_1, index=[0])
 #sympts_1 = sympts_1.rename(columns = {'0':'Symptom_1'}, inplace = True)
 
@@ -169,3 +173,13 @@ st.write(prec_1)
 st.write(prec_2)
 st.write(prec_3)
 st.write(prec_4)
+
+
+
+# Ask question
+st.subheader("Are you on any medications")
+st.text_input("Name of drugs")
+
+
+
+st.download_button("Download a report of your symptom analysis")
