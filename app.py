@@ -7,6 +7,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report,confusion_matrix,accuracy_score
 from sklearn.metrics import precision_score, recall_score, f1_score
 from PIL import Image
+import time
 
 # Load Data
 df_1 = pd.read_csv("dataset.csv")
@@ -62,7 +63,8 @@ image = Image.open("ml.jpg")
 
 
 
-st.chat_message("Bluezayn")
+#message = st.chat_message("Bluezayn")
+#message.write("Hello Human!")
 
 
 
@@ -133,9 +135,11 @@ with symptomp:
 # Make submit button (This makes the prediction faster and load at once)
     if st.sidebar.button('Predict'):
         st.write(df)  
+        with st.spinner('Wait for it...'):
+            time.sleep(5)
+            st.success('Done!')
     else:
         st.sidebar.markdown("Waiting for your symptoms!")  
-
 
 # Make reset button that clears all inputs 
    # def reset():
@@ -180,8 +184,8 @@ st.write(prec_4)
 
 # Ask question
 st.subheader("Are you on any medications?")
-st.text_input("Name of drugs")
+drugs = st.text_input("Name of drugs")
 
+summary = (f"Your predicted disease is {d_strip} and the drugs you are on is {drugs}")
 
-
-#st.download_button("Download a report of your symptom analysis", data=)
+st.download_button("Download a report of your symptom analysis", data=summary)
