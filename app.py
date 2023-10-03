@@ -76,14 +76,15 @@ st.sidebar.markdown("Press the predict botton below when done")
 
 options = st.sidebar.multiselect(
     'What are your favorite colors',
-    ['np.nan','Green', 'Yellow', 'Red', 'Blue'],
-    ['np.nan'])
+    [np.nan,'Green', 'Yellow', 'Red', 'Blue'],
+    [np.nan])
 
 data_1 = options
-sympts_1 = pd.DataFrame(data_1, index=[0])
-sympts_1 = sympts_1.rename(columns = {'0':'Symptom_1'}, inplace = True)
+st.write(data_1)
+#sympts_1 = pd.DataFrame(data_1, index=[0])
+#sympts_1 = sympts_1.rename(columns = {'0':'Symptom_1'}, inplace = True)
 
-st.write(sympts_1)
+#st.write(sympts_1)
 
 
 def user_input_symp():    
