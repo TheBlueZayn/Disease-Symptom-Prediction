@@ -157,7 +157,7 @@ st.write(prec_4)
 # Ask question
 # On real disease if known
 st.subheader("Do you know your disease?")
-st.markdown("We love to know your real disease to see how well our model did. If you are aware of it, please input below and if you are not aware, type *not known*")
+st.markdown("We would love to know your real disease to see how well our model did. If you are aware of it, please input below and if you are not aware, type *not known*")
 diseas = st.text_input("Name of disease", placeholder="type here")
 
 # On medications, if on any
