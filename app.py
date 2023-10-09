@@ -71,7 +71,7 @@ with header:
 
 
 st.sidebar.header("What are your symptoms?")
-st.sidebar.markdown("Select your symptoms")
+st.sidebar.markdown("Select your symptoms, maximum of 17")
 st.sidebar.markdown("Scroll down to predict")
 
 
