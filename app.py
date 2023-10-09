@@ -1,5 +1,4 @@
 import streamlit as st
-import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import StandardScaler
@@ -62,12 +61,6 @@ rfc_classifier.fit(X_train, Y_train)
 image = Image.open("ml.jpg")
 
 
-
-#message = st.chat_message("Bluezayn")
-#message.write("Hello Human!")
-
-
-
 # Create subsections 
 header = st.container()
 
@@ -81,18 +74,6 @@ st.sidebar.header("What are your symptoms?")
 st.sidebar.markdown("Select your symptoms")
 st.sidebar.markdown("Scroll down to predict")
 
-
-# options = st.sidebar.multiselect(
-#     'What are your favorite colors',
-#     [np.nan,'Green', 'Yellow', 'Red', 'Blue'],
-#     [np.nan])
-
-# data_1 = options
-# st.write(data_1)
-#sympts_1 = pd.DataFrame(data_1, index=[0])
-#sympts_1 = sympts_1.rename(columns = {'0':'Symptom_1'}, inplace = True)
-
-#st.write(sympts_1)
 
 
 def user_input_symp():    
@@ -123,7 +104,6 @@ def user_input_symp():
 
 
 
-
 #Display symptoms dataframe
 symptomp = st.container()
 
@@ -141,14 +121,6 @@ with symptomp:
     else:
         st.sidebar.markdown("Waiting for your symptoms!")  
 
-# Make reset button that clears all inputs 
-   # def reset():
-        #st.sidebar.selectbox = np.nan
-    #st.sidebar.button('Reset', on_click=reset)    
-   
-#st.sidebar.button("Reset")
-
-        #st.sidebar.button('Reset', on_click=reset)
 
 #Display predicted disease
 st.subheader("Predicted Disease")
