@@ -67,7 +67,7 @@ header = st.container()
 with header:
     st.title("BlueZayn's Disease Prediction Model")
     st.image(image)
-    st.markdown("Takes in symptoms and predicts a disease, gives a description and some precautions to take, asks some questions and generates a summary report that can be downloaded. (*mobile users, open side panel to input symptoms for*)")
+    st.markdown("Takes in symptoms and predicts a disease, gives a description and some precautions to take, asks some questions and generates a summary report that can be downloaded. (*For mobile users, open side panel to input symptoms for*)")
 
 
 st.sidebar.header("What are your symptoms?")
