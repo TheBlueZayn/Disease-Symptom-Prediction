@@ -185,4 +185,4 @@ summary = (f"""
            Your predicted disease is {d_strip}, your real disease is {diseas} and the drugs you are on is {drugs}""")
 
 st.markdown("Thank you for trying out the model, download your summary below ")
-st.download_button("Download a report", data=summary)
+st.download_button("Download your report", data=summary)
