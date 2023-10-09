@@ -72,7 +72,7 @@ with header:
 
 st.sidebar.header("What are your symptoms?")
 st.sidebar.markdown("Select your symptoms, maximum of 17")
-st.sidebar.markdown("Scroll down to predict")
+st.sidebar.markdown("*Scroll down to predict*")
 
 
 
@@ -156,7 +156,7 @@ st.write(prec_4)
 
 # Ask question
 st.subheader("Are you on any medications?")
-st.markdown("List out the drugs. E.g *Paracetamol, Vitamin C and Loratadine*")
+st.markdown("List out the drugs. E.g  *Paracetamol, Vitamin C and Loratadine*")
 drugs = st.text_input("Name of drugs")
 
 summary = (f"""
@@ -164,4 +164,4 @@ summary = (f"""
            Here is a summary. 
            Your predicted disease is {d_strip} and the drugs you are on is {drugs}""")
 
-st.download_button("Download a report of your symptom analysis", data=summary)
+st.download_button("Download a report", data=summary)
