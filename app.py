@@ -141,7 +141,7 @@ st.write(descr)
 
 
 # Display Precautions to take
-st.subheader("Precautions to take!")
+st.subheader("Precautions to take")
 prec_1 = df_3[df_3["Disease"] == d]["Precaution_1"].item().title()
 prec_2 = df_3[df_3["Disease"] == d]["Precaution_2"].item().title()
 prec_3 = df_3[df_3["Disease"] == d]["Precaution_3"].item().title()
@@ -156,8 +156,12 @@ st.write(prec_4)
 
 # Ask question
 st.subheader("Are you on any medications?")
+st.markdown("List out the drugs. E.g *Paracetamol, Vitamin C and Loratadine*")
 drugs = st.text_input("Name of drugs")
 
-summary = (f"Your predicted disease is {d_strip} and the drugs you are on is {drugs}")
+summary = (f"""
+           Thank you for using our predictor model. 
+           Here is a summary. 
+           Your predicted disease is {d_strip} and the drugs you are on is {drugs}""")
 
 st.download_button("Download a report of your symptom analysis", data=summary)
