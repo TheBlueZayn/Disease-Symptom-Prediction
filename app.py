@@ -155,16 +155,17 @@ st.write(prec_4)
 
 
 # Ask question
-st.subheader("Hos did we do?")
-st.markdown("Do you know the disease you have? If you do, input below ")
+st.subheader("Do you know your disease?")
+st.markdown("We love to know your real disease to see how well our model did. If you are aware of it, please input below ")
 diseas = st.text_input("Name of disease")
-st.title("Are you on any medications?")
+st.subheader("Are you on any medications?")
 st.markdown("List out the drugs. E.g  *Paracetamol, Vitamin C and Loratadine*")
-drugs = st.text_input("Name of drugs")
+drugs = st.text_input("Name of drugs", placeholder="None")
 
 summary = (f"""
            Thank you for using our predictor model. 
            Here is a summary. 
            Your predicted disease is {d_strip}, your real disease is {diseas} and the drugs you are on is {drugs}""")
 
+st.markdown("Thank you for trying out the model, download your summary below ")
 st.download_button("Download a report", data=summary)
