@@ -155,12 +155,29 @@ st.write(prec_4)
 
 
 # Ask question
+# On real disease if known
 st.subheader("Do you know your disease?")
-st.markdown("We love to know your real disease to see how well our model did. If you are aware of it, please input below ")
-diseas = st.text_input("Name of disease")
+st.markdown("We love to know your real disease to see how well our model did. If you are aware of it, please input below and if you are not aware, type *not known*")
+diseas = st.text_input("Name of disease", placeholder="type here")
+
+# On medications, if on any
 st.subheader("Are you on any medications?")
-st.markdown("List out the drugs. E.g  *Paracetamol, Vitamin C and Loratadine*")
-drugs = st.text_input("Name of drugs", placeholder="None")
+st.markdown("If you are on any medication, please list out the drugs below. E.g  *Paracetamol, Vitamin C and Loratadine*. If you are not on any drugs, type *none*")
+drugs = st.text_input("Name of drugs", placeholder="type here")
+
+#def Summary(dis, drug):
+#     if dis != " " and drugs != " ":
+#         summary = (f"""
+#            Thank you for using our predictor model. 
+#            Here is a summary. 
+#            Your predicted disease is {d_strip}, your real disease is {diseas} and the drugs you are on is {drugs}""")
+#     else:
+#         summary = (f""" Thank you for using our predictor model. 
+#                        Here is a summary. 
+#                        Your predicted disease is {d_strip}, your real disease is not known and you are not on any drugs""")
+#     return summary    
+
+# summary = Summary(diseas, drugs)
 
 summary = (f"""
            Thank you for using our predictor model. 
