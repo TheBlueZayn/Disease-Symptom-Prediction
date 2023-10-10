@@ -182,7 +182,14 @@ drugs = st.text_input("Name of drugs", placeholder="type here")
 summary = (f"""
            Thank you for using our predictor model. 
            Here is a summary. 
-           Your predicted disease is {d_strip}, your real disease is {diseas} and the drugs you are on is {drugs}""")
+           Your predicted disease is {d_strip}, your real disease is {diseas} and the drugs you are on is {drugs}
+        
+            Description of predicted disease: {descr}
+            Precautions to take: 1. {prec_1}
+                                 2. {prec_2}
+                                 3. {prec_3} 
+                                 4. {prec_4}
+""")
 
 st.markdown("Thank you for trying out the model, download your summary below ")
 st.download_button("Download your report", data=summary)
