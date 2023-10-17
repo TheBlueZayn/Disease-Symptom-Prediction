@@ -8,11 +8,11 @@ st.header("Test run")
 options = st.selectbox("syptomps", options=["itching", "skin_rash", "nodal_skin_eruptions", "continuous_sneezing"])
 
 #options = options
+symp = []
+symp.append(options)
+st.write(symp)
 
-st.write(options)
-s = str(options)
-st.write(s)
 
 df = pd.read_csv("empty_df.csv")
-df[s] = 1
+df[options] = 1
 st.write(df)
