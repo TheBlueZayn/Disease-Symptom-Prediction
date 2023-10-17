@@ -13,5 +13,5 @@ st.write(options)
 
 
 df = pd.read_csv("empty_df.csv")
-df = df["options"] = 1
+df = df[options] = 1
 st.write(df)
