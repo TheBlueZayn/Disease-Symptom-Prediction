@@ -10,3 +10,5 @@ options = st.multiselect("syptomps", options=["itching", "skin_rash", "nodal_ski
 #options = options
 
 st.write(options)
+
+
