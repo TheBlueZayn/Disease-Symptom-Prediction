@@ -11,13 +11,17 @@ options = st.multiselect("syptomps", options=["itching", "skin_rash", "nodal_ski
 symp = []
 symp.append(options)
 st.write(symp)
-st.write(str(symp[0]))
+
+symps = str(symp[0])
+st.write(symps)
+st.write(symps[0])
+#st.write(len(symps))
+#st.write(str(symp[0]))
 
 df = pd.read_csv("empty_df.csv")
 
-symps = str(symp[0])
-for i in len(symps):
-    df[i] = 1
+# for i in len(symps):
+#     df[i] = 1
 
 
 #df[options] = 1
