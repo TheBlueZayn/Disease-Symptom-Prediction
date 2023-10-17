@@ -14,7 +14,10 @@ st.write(symp)
 
 symps = str(symp[0])
 st.write(symps)
-st.write(symps[0])
+st.write(type(symps))
+new_symps = ast.literal_eval(symps)
+
+
 #st.write(len(symps))
 #st.write(str(symp[0]))
 
