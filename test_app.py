@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-
+import ast 
 
 st.header("Test run")
 #for i in range(10):
@@ -12,10 +12,16 @@ symp = []
 symp.append(options)
 st.write(symp)
 
-symps = str(symp[0])
+symps = list(symp[0])
 st.write(symps)
+
 st.write(type(symps))
-new_symps = ast.literal_eval(symps)
+
+#st.write(len(symps))
+
+
+#new_symps = symps.split()
+#st.write(new_symps)
 
 
 #st.write(len(symps))
