@@ -12,3 +12,5 @@ options = st.multiselect("syptomps", options=["itching", "skin_rash", "nodal_ski
 st.write(options)
 
 
+df = pd.read_csv("empty_df.csv")
+st.write(df)
