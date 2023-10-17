@@ -10,8 +10,9 @@ options = st.selectbox("syptomps", options=["itching", "skin_rash", "nodal_skin_
 #options = options
 
 st.write(options)
-
+s = str(options)
+st.write(s)
 
 df = pd.read_csv("empty_df.csv")
-df = df[options] = 1
+df[s] = 1
 st.write(df)
