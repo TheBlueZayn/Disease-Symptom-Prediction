@@ -28,7 +28,7 @@ for option in options:
 for option in options:
     df[option] = 1
 
-#st.write(df)
+st.write(df)
 
 df_list = df.iloc[0].to_list()
 
@@ -39,6 +39,8 @@ df_arr = df_arr.reshape(1,-1)
 prediction = ml_model.predict(df_arr)
 prediction
 dis = prediction[0]
-st.write(disease_classes[dis])
+d = disease_classes[dis]
+
+st.write(d)
 
 
