@@ -73,12 +73,12 @@ header = st.container()
 with header:
     st.title("BlueZayn's Disease Prediction Model")
     st.image(image)
-    st.markdown("Takes in symptoms and predicts a disease, gives a description and some precautions to take, asks some questions and generates a summary report that can be downloaded. (*For mobile users, open side panel to input symptoms for*)")
+    st.markdown("Takes in symptoms and predicts a disease, gives a description and some precautions to take, asks some questions and generates a summary report that can be downloaded. (*For mobile users, open side panel to input symptoms*)")
 
 
 st.sidebar.header("What are your symptoms?")
-#st.sidebar.markdown("Select your symptoms, maximum of 17")
-#st.sidebar.markdown("*Scroll down to predict*")
+st.sidebar.markdown("Select your symptoms")
+st.sidebar.markdown("**Press the predict button when done**")
 
 disease_classes = ['(vertigo) Paroymsal  Positional Vertigo', 'AIDS', 'Acne',
        'Alcoholic hepatitis', 'Allergy', 'Arthritis', 'Bronchial Asthma',
@@ -93,7 +93,7 @@ disease_classes = ['(vertigo) Paroymsal  Positional Vertigo', 'AIDS', 'Acne',
        'Peptic ulcer diseae', 'Pneumonia', 'Psoriasis', 'Tuberculosis',
        'Typhoid', 'Urinary tract infection', 'Varicose veins',
        'hepatitis A']
-options = st.sidebar.multiselect("Syptoms", options= df.columns)
+options = st.sidebar.multiselect(" ", options= df.columns)
 
 # def user_input_symp():    
 #     symp_1 = st.sidebar.selectbox("Symptom_1", options= [np.nan,'abdominal_pain','abnormal_menstruation','acidity','acute_liver_failure','altered_sensorium', 'anxiety','back_pain','belly_pain','blackheads','bladder_discomfort','blister','blood_in_sputum','bloody_stool','blurred_and_distorted_vision','breathlessness','brittle_nails','bruising','burning_micturition','chest_pain','chills', 'cold_hands_and_feets','coma','congestion','constipation','continuous_feel_of_urine','continuous_sneezing','cough','cramps','dark_urine','dehydration','depression', 'diarrhoea','dischromic__patches','distention_of_abdomen','dizziness','drying_and_tingling_lips','enlarged_thyroid','excessive_hunger','extra_marital_contacts','family_history', 'fast_heart_rate','fatigue', 'fluid_overload','foul_smell_of_urine','headache','high_fever','hip_joint_pain', 'history_of_alcohol_consumption','increased_appetite','indigestion','inflammatory_nails','internal_itching','irregular_sugar_level','irritability','irritation_in_anus','itching','joint_pain','knee_pain','lack_of_concentration', 'lethargy','loss_of_appetite','loss_of_balance', 'loss_of_smell','malaise','mild_fever','mood_swings','movement_stiffness', 'mucoid_sputum','muscle_pain','muscle_wasting','muscle_weakness','nausea','neck_pain','nodal_skin_eruptions','obesity','pain_behind_the_eyes','pain_during_bowel_movements','pain_in_anal_region','painful_walking','palpitations','passage_of_gases','patches_in_throat','phlegm','polyuria','prominent_veins_on_calf','puffy_face_and_eyes','pus_filled_pimples','receiving_blood_transfusion','receiving_unsterile_injections','red_sore_around_nose','red_spots_over_body','redness_of_eyes','restlessness','runny_nose','rusty_sputum','scurring','shivering','silver_like_dusting','sinus_pressure','skin_peeling','skin_rash','slurred_speech','small_dents_in_nails','spinning_movements','spotting__urination','stiff_neck','stomach_bleeding','stomach_pain','sunken_eyes','sweating','swelled_lymph_nodes','swelling_joints','swelling_of_stomach','swollen_blood_vessels','swollen_extremeties','swollen_legs','throat_irritation','toxic_look_(typhos)','ulcers_on_tongue','unsteadiness','visual_disturbances','vomiting','watering_from_eyes','weakness_in_limbs','weakness_of_one_body_side','weight_gain','weight_loss','yellow_crust_ooze','yellow_urine','yellowing_of_eyes','yellowish_skin'])
@@ -130,30 +130,47 @@ with symptomp:
     st.subheader("Your Symptoms")
     for option in options:
         st.write(option)
+    for option in options:
+        df[option] = 1
 
     #df = user_input_symp()
     #st.write(df)
 # Make submit button (This makes the prediction faster and load at once)
-    if st.sidebar.button('Predict'):
-        st.write(df)  
-        with st.spinner('Wait for it...'):
-            time.sleep(5)
-            st.success('Done!')
-    else:
-        st.sidebar.markdown("Waiting for your symptoms!")  
+
+
 
 
 #Display predicted disease
 st.subheader("Predicted Disease")
 
-# Predict disease
-df = encode_symptoms(df, df_4)
-standardized_df = scaler.transform(df)
-d = rfc_classifier.predict(standardized_df).item()
-d_strip = d.strip().replace("_", " ")
+df_list = df.iloc[0].to_list()
+df_arr = np.array(df_list)
+df_arr = df_arr.reshape(1,-1)
 
-#st.write("The predicted Disease is:")
-st.write(d_strip)
+# Make the prediction
+prediction = ml_model.predict(df_arr)
+dis = prediction[0]
+d = disease_classes[dis]
+
+# Make submit button (This makes the prediction faster and load at once)
+if st.sidebar.button('Predict'):
+    with st.spinner('Wait for it...'):
+        time.sleep(3)
+        st.success('Done!')
+        st.write(d)  
+else:
+    st.sidebar.markdown("Waiting for your symptoms!")  
+
+
+
+# # Predict disease
+# df = encode_symptoms(df, df_4)
+# standardized_df = scaler.transform(df)
+# d = rfc_classifier.predict(standardized_df).item()
+# d_strip = d.strip().replace("_", " ")
+
+# #st.write("The predicted Disease is:")
+# st.write(d_strip)
 
 # Display description of predicted disease
 st.subheader("Desription of Predicted Disease")
@@ -203,7 +220,7 @@ drugs = st.text_input("Name of drugs", placeholder="type here")
 summary = (f"""
            Thank you for using our predictor model. 
            Here is a summary. 
-           Your predicted disease is {d_strip}, your real disease is {diseas} and the drugs you are on is {drugs}
+           Your predicted disease is {d}, your real disease is {diseas} and the drugs you are on is {drugs}
         
             Description of predicted disease: {descr}
             Precautions to take: 1. {prec_1}
