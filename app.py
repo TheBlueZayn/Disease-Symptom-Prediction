@@ -100,7 +100,9 @@ else:
     st.sidebar.markdown("Waiting for your symptoms!")  
 
 # Ask question
-if st.button("Answer some questions"):
+st.markdown("**Would you like to answer some questions?**")
+st.markdown("If yes, press the button below")
+if st.button("Ask away"):
 
 # On real disease if known
     st.subheader("Disease History")
@@ -128,6 +130,6 @@ if st.button("Answer some questions"):
                                  3. {prec_3} 
                                  4. {prec_4}
 """)
-
-st.markdown("Thank you for trying out the model, download your summary below ")
-st.download_button("Download your report", data=summary)
+    st.markdown("download your summary below")
+    st.download_button("Download your report", data=summary)
+st.markdown("Thank you for trying out the model!")
