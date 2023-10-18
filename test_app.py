@@ -4,6 +4,7 @@ import numpy as np
 from joblib import dump,load
 ml_model=load('rf_model.joblib')
 df = pd.read_csv("empty_df.csv")
+
 disease_classes = ['(vertigo) Paroymsal  Positional Vertigo', 'AIDS', 'Acne',
        'Alcoholic hepatitis', 'Allergy', 'Arthritis', 'Bronchial Asthma',
        'Cervical spondylosis', 'Chicken pox', 'Chronic cholestasis',
@@ -17,15 +18,18 @@ disease_classes = ['(vertigo) Paroymsal  Positional Vertigo', 'AIDS', 'Acne',
        'Peptic ulcer diseae', 'Pneumonia', 'Psoriasis', 'Tuberculosis',
        'Typhoid', 'Urinary tract infection', 'Varicose veins',
        'hepatitis A']
+
 st.header("Test run")
 options = st.multiselect("Syptoms", options= df.columns)
     
 st.write("Your symptoms are:")
 for option in options:
     st.write(option)
+for option in options:
     df[option] = 1
 
-st.write(df)
+#st.write(df)
+
 df_list = df.iloc[0].to_list()
 
 df_arr = np.array(df_list)
