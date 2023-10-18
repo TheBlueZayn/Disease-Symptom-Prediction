@@ -100,21 +100,23 @@ else:
     st.sidebar.markdown("Waiting for your symptoms!")  
 
 # Ask question
+if st.button("Answer some questions"):
+
 # On real disease if known
-st.subheader("Disease History")
-st.markdown("We would love to know your real disease to see how well our model did. If you are aware of it, please input below and if you are not aware, type *not known*")
-diseas = st.radio("Is your disease known?", options=["not known", "known"])
-if diseas == "known":
-    st.text_input("Name of disease", placeholder="type here")
+    st.subheader("Disease History")
+    st.markdown("We would love to know your real disease to see how well our model did. If you are aware of it, please input below and if you are not aware, type *not known*")
+    diseas = st.radio("Is your disease known?", options=["not known", "known"])
+    if diseas == "known":
+        st.text_input("Name of disease", placeholder="type here")
 
 # On medications, if on any
-st.subheader("Medication History?")
-st.markdown("If you are on any medication, please list out the drugs below. E.g  *Paracetamol, Vitamin C and Loratadine*.")
-drugs = st.radio("Are you on any drugs ?",options=["no","yes"])
-if drugs == "yes":
-    st.text_input("Name of drugs", placeholder="type here")
+    st.subheader("Medication History?")
+    st.markdown("If you are on any medication, please list out the drugs below. E.g  *Paracetamol, Vitamin C and Loratadine*.")
+    drugs = st.radio("Are you on any drugs ?",options=["no","yes"])
+    if drugs == "yes":
+        st.text_input("Name of drugs", placeholder="type here")
 
-summary = (f"""
+    summary = (f"""
            Thank you for using our predictor model. 
            Here is a summary
            Your symptoms are: {options} 
