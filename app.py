@@ -14,54 +14,11 @@ ml_model=load('rf_model.joblib')
 
 # Load Data
 df = pd.read_csv("empty_df.csv")
-
-# df_1 = pd.read_csv("dataset.csv")
 df_2 = pd.read_csv("symptom_Description.csv")
 df_3 = pd.read_csv("symptom_precaution.csv")
-# df_4 = pd.read_csv("Symptom-severity.csv")
 
-# # Encode symptomps with severity
-# def encode_symptoms(df, df_4):
-#     for i in df_4.index:
-#         symptom = df_4["Symptom"][i]
-#         weight = df_4["weight"][i]
-#         df = df.replace(symptom, weight)
 
-#     # Replace missing values with 0
-#     df = df.fillna(0)
 
-#     # Additional hardcoded replacements
-#     df = df.replace("foul_smell_of_urine", 5)
-#     df = df.replace("dischromic__patches", 6)
-#     df = df.replace("spotting__urination", 6)
-    
-#     return df
-
-# # Encode data with severity
-# new_df_1 = encode_symptoms(df_1, df_4)
-
-# # separating the data and labels
-# X = new_df_1.drop(columns='Disease', axis=1)
-# Y = new_df_1['Disease']
-
-# # Data Standardization
-# scaler = StandardScaler()
-# scaler.fit(X)
-# # Set standardized data
-# standardized_data = scaler.transform(X)
-# X = standardized_data
-# Y = new_df_1['Disease']
-
-# # Train Model
-# from sklearn.ensemble import RandomForestClassifier
-# # Split the data into training and testing sets
-# X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=42)
-
-# # Create a Random Forest Classifier
-# rfc_classifier = RandomForestClassifier(n_estimators=100, random_state=42)
-
-# # Fit the model on the training data
-# rfc_classifier.fit(X_train, Y_train)
 
 
 image = Image.open("ml.jpg")
@@ -133,12 +90,6 @@ with symptomp:
     for option in options:
         df[option] = 1
 
-    #df = user_input_symp()
-    #st.write(df)
-# Make submit button (This makes the prediction faster and load at once)
-
-
-
 
 #Display predicted disease
 st.subheader("Predicted Disease")
@@ -151,46 +102,42 @@ df_arr = df_arr.reshape(1,-1)
 prediction = ml_model.predict(df_arr)
 dis = prediction[0]
 d = disease_classes[dis]
-
-# Make submit button (This makes the prediction faster and load at once)
-if st.sidebar.button('Predict'):
-    with st.spinner('Wait for it...'):
-        time.sleep(3)
-        st.success('Done!')
-        st.write(d)  
-else:
-    st.sidebar.markdown("Waiting for your symptoms!")  
-
-
-
-# # Predict disease
-# df = encode_symptoms(df, df_4)
-# standardized_df = scaler.transform(df)
-# d = rfc_classifier.predict(standardized_df).item()
-# d_strip = d.strip().replace("_", " ")
-
-# #st.write("The predicted Disease is:")
-# st.write(d_strip)
+# if st.sidebar.button('Predict'):
+#     st.write(d)  
+# else:
+#     st.sidebar.markdown("Waiting for your symptoms!")  
 
 # Display description of predicted disease
-st.subheader("Desription of Predicted Disease")
+#st.subheader("Description of Predicted Disease")
 descr = (df_2[df_2["Disease"] == d]["Description"].item())
-st.write(descr)
+# Make submit button (This makes the prediction faster and load at once)
+# if st.sidebar.button('Predict'): 
+#     st.write(descr)
+# else:
+#     st.sidebar.markdown("Waiting for your symptoms!") 
 
 
 # Display Precautions to take
-st.subheader("Precautions to take")
+#st.subheader("Precautions to take")
 prec_1 = df_3[df_3["Disease"] == d]["Precaution_1"].item().title()
 prec_2 = df_3[df_3["Disease"] == d]["Precaution_2"].item().title()
 prec_3 = df_3[df_3["Disease"] == d]["Precaution_3"].item().title()
 prec_4 = df_3[df_3["Disease"] == d]["Precaution_4"].item().title()
 
-st.write(prec_1)
-st.write(prec_2)
-st.write(prec_3)
-st.write(prec_4)
+# Make submit button (This makes the prediction faster and load at once)
+if st.sidebar.button('Predict'):
+    st.write(d)
 
+    st.subheader("Description of Predicted Disease")
+    st.write(descr)
 
+    st.subheader("Precautions to take")
+    st.write(prec_1)
+    st.write(prec_2)
+    st.write(prec_3)
+    st.write(prec_4)
+else:
+    st.sidebar.markdown("Waiting for your symptoms!")  
 
 # Ask question
 # On real disease if known
@@ -216,10 +163,12 @@ drugs = st.text_input("Name of drugs", placeholder="type here")
 #     return summary    
 
 # summary = Summary(diseas, drugs)
-
+# for options in options:
+#     opt =+ options
 summary = (f"""
            Thank you for using our predictor model. 
-           Here is a summary. 
+           Here is a summary
+           Your symptoms are: {options} 
            Your predicted disease is {d}, your real disease is {diseas} and the drugs you are on is {drugs}
         
             Description of predicted disease: {descr}
