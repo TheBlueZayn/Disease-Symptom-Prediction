@@ -151,7 +151,7 @@ summary = (f"""
 st.markdown("download your summary below")
 st.download_button("Download your report", data=summary, key="late",  mime="text/plain", file_name="My_prediction.txt")
 st.markdown("Thank you for trying out the model!")
-st.markdown("Want to know how I built this? Check out the codes [here](https://disease-symptom-prediction-kqpnytmyfqmmtbjyxlvkcy.streamlit.app/)")
+#st.markdown("Want to know how I built this? Check out the codes [here](https://disease-symptom-prediction-kqpnytmyfqmmtbjyxlvkcy.streamlit.app/)")
 # else:
     #     st.markdown("Thank you for trying out the model!")
     #     st.markdown("Want to know how I built this? Check out the codes here")
