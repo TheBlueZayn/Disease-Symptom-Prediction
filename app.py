@@ -174,7 +174,7 @@ updated_data = pd.concat([updated_data,data])
 updated_data.to_csv("updated_data.csv")
 
 st.markdown("Thank you for trying out the model!")
-#st.markdown("Want to know how I built this? Check out the codes [here](https://disease-symptom-prediction-kqpnytmyfqmmtbjyxlvkcy.streamlit.app/)")
+st.markdown("Want to know how this was built? Check out the codes [here](https://disease-symptom-prediction-kqpnytmyfqmmtbjyxlvkcy.streamlit.app/)")
 
 
 # else:
