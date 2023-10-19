@@ -1,19 +1,47 @@
-,Unnamed: 0.7,Unnamed: 0.6,Unnamed: 0.5,Unnamed: 0.4,Unnamed: 0.3,Unnamed: 0.2,Unnamed: 0.1,Unnamed: 0,symptoms,predicted_disease,disease,drugs_on
-0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Skin_rash,Fungal infection,Acne,Benzoic Peroxide
-1,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,itching,Fungal infection,Acne,Benzoic Peroxide
-2,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,itching,Fungal infection,Acne,Paracetamol
-3,3.0,3.0,3.0,3.0,3.0,3.0,3.0,3.0,skin_rash,Fungal infection,Acne,Paracetamol
-4,4.0,4.0,4.0,4.0,4.0,4.0,4.0,4.0,nodal_skin_eruptions,Fungal infection,vegd,rwtd
-5,5.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,skin_rash,Fungal infection,vegd,rwtd
-6,6.0,6.0,6.0,6.0,6.0,6.0,0.0,,itching,Fungal infection,not known,no
-7,7.0,7.0,7.0,7.0,7.0,0.0,,,itching,Allergy,not known,no
-8,8.0,8.0,8.0,8.0,8.0,1.0,,,shivering,Allergy,not known,no
-9,9.0,9.0,9.0,9.0,0.0,,,,itching,Allergy,not known,no
-10,10.0,10.0,10.0,10.0,1.0,,,,shivering,Allergy,not known,no
-11,11.0,11.0,0.0,,,,,,nodal_skin_eruptions,Fungal infection,not known,no
-12,12.0,0.0,,,,,,,nodal_skin_eruptions,Fungal infection,not known,no
-13,13.0,1.0,,,,,,,shivering,Fungal infection,not known,no
-14,0.0,,,,,,,,nodal_skin_eruptions,Fungal infection,not known,no
-15,1.0,,,,,,,,shivering,Fungal infection,not known,no
-0,,,,,,,,,nodal_skin_eruptions,Fungal infection,not known,no
-1,,,,,,,,,shivering,Fungal infection,not known,no
+,Unnamed: 0.21,Unnamed: 0.20,Unnamed: 0.19,Unnamed: 0.18,Unnamed: 0.17,Unnamed: 0.16,Unnamed: 0.15,Unnamed: 0.14,Unnamed: 0.13,Unnamed: 0.12,Unnamed: 0.11,Unnamed: 0.10,Unnamed: 0.9,Unnamed: 0.8,Unnamed: 0.7,Unnamed: 0.6,Unnamed: 0.5,Unnamed: 0.4,Unnamed: 0.3,Unnamed: 0.2,Unnamed: 0.1,Unnamed: 0,symptoms,predicted_disease,disease,drugs_on
+0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Skin_rash,Fungal infection,Acne,Benzoic Peroxide
+1,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,itching,Fungal infection,Acne,Benzoic Peroxide
+2,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,itching,Fungal infection,Acne,Paracetamol
+3,3.0,3.0,3.0,3.0,3.0,3.0,3.0,3.0,3.0,3.0,3.0,3.0,3.0,3.0,3.0,3.0,3.0,3.0,3.0,3.0,3.0,3.0,skin_rash,Fungal infection,Acne,Paracetamol
+4,4.0,4.0,4.0,4.0,4.0,4.0,4.0,4.0,4.0,4.0,4.0,4.0,4.0,4.0,4.0,4.0,4.0,4.0,4.0,4.0,4.0,4.0,nodal_skin_eruptions,Fungal infection,vegd,rwtd
+5,5.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,skin_rash,Fungal infection,vegd,rwtd
+6,6.0,6.0,6.0,6.0,6.0,6.0,6.0,6.0,6.0,6.0,6.0,6.0,6.0,6.0,6.0,6.0,6.0,6.0,6.0,6.0,0.0,,itching,Fungal infection,not known,no
+7,7.0,7.0,7.0,7.0,7.0,7.0,7.0,7.0,7.0,7.0,7.0,7.0,7.0,7.0,7.0,7.0,7.0,7.0,7.0,0.0,,,itching,Allergy,not known,no
+8,8.0,8.0,8.0,8.0,8.0,8.0,8.0,8.0,8.0,8.0,8.0,8.0,8.0,8.0,8.0,8.0,8.0,8.0,8.0,1.0,,,shivering,Allergy,not known,no
+9,9.0,9.0,9.0,9.0,9.0,9.0,9.0,9.0,9.0,9.0,9.0,9.0,9.0,9.0,9.0,9.0,9.0,9.0,0.0,,,,itching,Allergy,not known,no
+10,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,10.0,1.0,,,,shivering,Allergy,not known,no
+11,11.0,11.0,11.0,11.0,11.0,11.0,11.0,11.0,11.0,11.0,11.0,11.0,11.0,11.0,11.0,11.0,0.0,,,,,,nodal_skin_eruptions,Fungal infection,not known,no
+12,12.0,12.0,12.0,12.0,12.0,12.0,12.0,12.0,12.0,12.0,12.0,12.0,12.0,12.0,12.0,0.0,,,,,,,nodal_skin_eruptions,Fungal infection,not known,no
+13,13.0,13.0,13.0,13.0,13.0,13.0,13.0,13.0,13.0,13.0,13.0,13.0,13.0,13.0,13.0,1.0,,,,,,,shivering,Fungal infection,not known,no
+14,14.0,14.0,14.0,14.0,14.0,14.0,14.0,14.0,14.0,14.0,14.0,14.0,14.0,14.0,0.0,,,,,,,,nodal_skin_eruptions,Fungal infection,not known,no
+15,15.0,15.0,15.0,15.0,15.0,15.0,15.0,15.0,15.0,15.0,15.0,15.0,15.0,15.0,1.0,,,,,,,,shivering,Fungal infection,not known,no
+16,16.0,16.0,16.0,16.0,16.0,16.0,16.0,16.0,16.0,16.0,16.0,16.0,16.0,0.0,,,,,,,,,nodal_skin_eruptions,Fungal infection,not known,no
+17,17.0,17.0,17.0,17.0,17.0,17.0,17.0,17.0,17.0,17.0,17.0,17.0,17.0,1.0,,,,,,,,,shivering,Fungal infection,not known,no
+18,18.0,18.0,18.0,18.0,18.0,18.0,18.0,18.0,18.0,18.0,18.0,18.0,0.0,,,,,,,,,,shivering,Allergy,not known,no
+19,19.0,19.0,19.0,19.0,19.0,19.0,19.0,19.0,19.0,19.0,0.0,,,,,,,,,,,,itching,Fungal infection,not known,no
+20,20.0,20.0,20.0,20.0,20.0,20.0,20.0,20.0,20.0,0.0,,,,,,,,,,,,,itching,Fungal infection,not known,no
+21,21.0,21.0,21.0,21.0,21.0,21.0,21.0,21.0,21.0,1.0,,,,,,,,,,,,,skin_rash,Fungal infection,not known,no
+22,22.0,22.0,22.0,22.0,22.0,22.0,22.0,22.0,0.0,,,,,,,,,,,,,,itching,Fungal infection,not known,no
+23,23.0,23.0,23.0,23.0,23.0,23.0,23.0,23.0,1.0,,,,,,,,,,,,,,skin_rash,Fungal infection,not known,no
+24,24.0,24.0,24.0,24.0,24.0,24.0,24.0,24.0,2.0,,,,,,,,,,,,,,nodal_skin_eruptions,Fungal infection,not known,no
+25,25.0,25.0,25.0,25.0,25.0,25.0,25.0,0.0,,,,,,,,,,,,,,,itching,Fungal infection,,no
+26,26.0,26.0,26.0,26.0,26.0,26.0,26.0,1.0,,,,,,,,,,,,,,,skin_rash,Fungal infection,,no
+27,27.0,27.0,27.0,27.0,27.0,27.0,27.0,2.0,,,,,,,,,,,,,,,nodal_skin_eruptions,Fungal infection,,no
+28,28.0,28.0,28.0,28.0,28.0,28.0,0.0,,,,,,,,,,,,,,,,itching,Fungal infection,Acne,no
+29,29.0,29.0,29.0,29.0,29.0,29.0,1.0,,,,,,,,,,,,,,,,skin_rash,Fungal infection,Acne,no
+30,30.0,30.0,30.0,30.0,30.0,30.0,2.0,,,,,,,,,,,,,,,,nodal_skin_eruptions,Fungal infection,Acne,no
+31,31.0,31.0,31.0,31.0,31.0,0.0,,,,,,,,,,,,,,,,,itching,Fungal infection,Acne,no
+32,32.0,32.0,32.0,32.0,32.0,1.0,,,,,,,,,,,,,,,,,skin_rash,Fungal infection,Acne,no
+33,33.0,33.0,33.0,33.0,33.0,2.0,,,,,,,,,,,,,,,,,nodal_skin_eruptions,Fungal infection,Acne,no
+34,34.0,34.0,34.0,0.0,,,,,,,,,,,,,,,,,,,itching,Fungal infection,Acne,no
+35,35.0,35.0,0.0,,,,,,,,,,,,,,,,,,,,itching,Fungal infection,Acne,no
+36,36.0,36.0,1.0,,,,,,,,,,,,,,,,,,,,skin_rash,Fungal infection,Acne,no
+37,37.0,0.0,,,,,,,,,,,,,,,,,,,,,itching,Fungal infection,Acne,no
+38,38.0,1.0,,,,,,,,,,,,,,,,,,,,,skin_rash,Fungal infection,Acne,no
+39,39.0,2.0,,,,,,,,,,,,,,,,,,,,,nodal_skin_eruptions,Fungal infection,Acne,no
+40,0.0,,,,,,,,,,,,,,,,,,,,,,itching,Fungal infection,Acne,no
+41,1.0,,,,,,,,,,,,,,,,,,,,,,skin_rash,Fungal infection,Acne,no
+42,2.0,,,,,,,,,,,,,,,,,,,,,,nodal_skin_eruptions,Fungal infection,Acne,no
+0,,,,,,,,,,,,,,,,,,,,,,,itching,Fungal infection,not known,no
+1,,,,,,,,,,,,,,,,,,,,,,,skin_rash,Fungal infection,not known,no
+2,,,,,,,,,,,,,,,,,,,,,,,nodal_skin_eruptions,Fungal infection,not known,no
