@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report,confusion_matrix,accuracy_score
 from sklearn.metrics import precision_score, recall_score, f1_score
 from PIL import Image
-import time
+#import time
 
 from joblib import dump,load
 ml_model=load('rf_model.joblib')
@@ -17,8 +17,6 @@ df = pd.read_csv("empty_df.csv")
 df_2 = pd.read_csv("symptom_Description.csv")
 df_3 = pd.read_csv("symptom_precaution.csv")
 updated_data = pd.read_csv("updated_data.csv")
-
-
 
 
 image = Image.open("ml.jpg")
@@ -174,7 +172,7 @@ updated_data = pd.concat([updated_data,data])
 updated_data.to_csv("updated_data.csv")
 
 st.markdown("Thank you for trying out the model!")
-st.markdown("Want to know how this was built? Check out the codes [here](https://disease-symptom-prediction-kqpnytmyfqmmtbjyxlvkcy.streamlit.app/)")
+#st.markdown("Want to know how this was built? Check out the codes [here](https://github.com/TheBlueZayn/Disease-Symptom-Prediction)")
 
 
 # else:
