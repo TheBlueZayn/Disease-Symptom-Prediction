@@ -119,6 +119,7 @@ st.subheader("**Would you like to answer some questions?**")
 
 st.markdown("If no, press the button below")
 st.download_button("Download your report", data=summary_early, key="early", mime="text/plain", file_name="My_prediction.txt")
+st.markdown("If yes, kindly answer the questions below")
 
 # On real disease if known
 st.subheader("Disease History")
