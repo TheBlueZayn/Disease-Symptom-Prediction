@@ -163,13 +163,13 @@ dic = {"symptoms": user_symptoms,"predicted_disease" :predicted_disease,  "disea
 # Create Dataframe
 data = pd.DataFrame(dic, index=range(len(options)))
 
-st.write(data)
+#st.write(data)
 # Concatenate
 
-updated_data = pd.concat([updated_data,data])
+updated = pd.concat([updated_data,data])
 #st.write(updated_data)
 
-updated_data.to_csv("updated_data.csv")
+updated.to_csv("updated_data.csv")
 
 st.markdown("Thank you for trying out the model!")
 #st.markdown("Want to know how this was built? Check out the codes [here](https://github.com/TheBlueZayn/Disease-Symptom-Prediction)")
