@@ -1,12 +1,19 @@
-,Unnamed: 0.2,Unnamed: 0.1,Unnamed: 0,symptoms,predicted_disease,disease,drugs_on
-0,0.0,0.0,0.0,Skin_rash,Fungal infection,Acne,Benzoic Peroxide
-1,1.0,1.0,1.0,itching,Fungal infection,Acne,Benzoic Peroxide
-2,2.0,2.0,2.0,itching,Fungal infection,Acne,Paracetamol
-3,3.0,3.0,3.0,skin_rash,Fungal infection,Acne,Paracetamol
-4,4.0,4.0,4.0,nodal_skin_eruptions,Fungal infection,vegd,rwtd
-5,5.0,5.0,5.0,skin_rash,Fungal infection,vegd,rwtd
-6,6.0,0.0,,itching,Fungal infection,not known,no
-7,0.0,,,itching,Allergy,not known,no
-8,1.0,,,shivering,Allergy,not known,no
-0,,,,itching,Allergy,not known,no
-1,,,,shivering,Allergy,not known,no
+,Unnamed: 0.7,Unnamed: 0.6,Unnamed: 0.5,Unnamed: 0.4,Unnamed: 0.3,Unnamed: 0.2,Unnamed: 0.1,Unnamed: 0,symptoms,predicted_disease,disease,drugs_on
+0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Skin_rash,Fungal infection,Acne,Benzoic Peroxide
+1,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,itching,Fungal infection,Acne,Benzoic Peroxide
+2,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0,itching,Fungal infection,Acne,Paracetamol
+3,3.0,3.0,3.0,3.0,3.0,3.0,3.0,3.0,skin_rash,Fungal infection,Acne,Paracetamol
+4,4.0,4.0,4.0,4.0,4.0,4.0,4.0,4.0,nodal_skin_eruptions,Fungal infection,vegd,rwtd
+5,5.0,5.0,5.0,5.0,5.0,5.0,5.0,5.0,skin_rash,Fungal infection,vegd,rwtd
+6,6.0,6.0,6.0,6.0,6.0,6.0,0.0,,itching,Fungal infection,not known,no
+7,7.0,7.0,7.0,7.0,7.0,0.0,,,itching,Allergy,not known,no
+8,8.0,8.0,8.0,8.0,8.0,1.0,,,shivering,Allergy,not known,no
+9,9.0,9.0,9.0,9.0,0.0,,,,itching,Allergy,not known,no
+10,10.0,10.0,10.0,10.0,1.0,,,,shivering,Allergy,not known,no
+11,11.0,11.0,0.0,,,,,,nodal_skin_eruptions,Fungal infection,not known,no
+12,12.0,0.0,,,,,,,nodal_skin_eruptions,Fungal infection,not known,no
+13,13.0,1.0,,,,,,,shivering,Fungal infection,not known,no
+14,0.0,,,,,,,,nodal_skin_eruptions,Fungal infection,not known,no
+15,1.0,,,,,,,,shivering,Fungal infection,not known,no
+0,,,,,,,,,nodal_skin_eruptions,Fungal infection,not known,no
+1,,,,,,,,,shivering,Fungal infection,not known,no
