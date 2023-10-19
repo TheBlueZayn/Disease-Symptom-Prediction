@@ -45,8 +45,8 @@ disease_classes = ['(vertigo) Paroymsal  Positional Vertigo', 'AIDS', 'Acne',
        'Fungal infection', 'GERD', 'Gastroenteritis', 'Heart attack',
        'Hepatitis B', 'Hepatitis C', 'Hepatitis D', 'Hepatitis E',
        'Hypertension ', 'Hyperthyroidism', 'Hypoglycemia',
-       'Hypothyroidism', 'Impetigo', 'Jaundice', 'Malaria', 'Migraine',
-       'Osteoarthristis', 'Paralysis (brain hemorrhage)',
+       'Hypothyroidism', 'Impetigo', 'Jaundice', 'Malaria', 'Migraine', 
+       'No disease','Osteoarthristis', 'Paralysis (brain hemorrhage)',
        'Peptic ulcer diseae', 'Pneumonia', 'Psoriasis', 'Tuberculosis',
        'Typhoid', 'Urinary tract infection', 'Varicose veins',
        'hepatitis A']
@@ -103,9 +103,22 @@ else:
 # Ask question
 # questions = st.container()
 # with questions:
+summary_early =  (f"""
+    Thank you for using our predictor model. 
+    Here is a summary
+    Your symptoms are: {options} 
+    
+    Description of predicted disease: {descr}
+    
+    Precautions to take: 1. {prec_1}
+                            2. {prec_2}
+                            3. {prec_3} 
+                            4. {prec_4}
+""")
 st.subheader("**Would you like to answer some questions?**")
-# st.markdown("If yes, press the button below")
-# if st.button("Ask away!"):
+
+st.markdown("If no, press the button below")
+st.download_button("Download your report", data=summary_early)
 
 # On real disease if known
 st.subheader("Disease History")
