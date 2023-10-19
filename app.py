@@ -101,38 +101,44 @@ else:
     st.sidebar.markdown("Waiting for your symptoms!")  
 
 # Ask question
-questions = st.container()
-with questions:
-    st.subheader("**Would you like to answer some questions?**")
-    st.markdown("If yes, press the button below")
-    if st.button("Ask away"):
+# questions = st.container()
+# with questions:
+st.subheader("**Would you like to answer some questions?**")
+# st.markdown("If yes, press the button below")
+# if st.button("Ask away!"):
 
-    # On real disease if known
-        st.subheader("Disease History")
-        st.markdown("We would love to know your real disease to see how well our model did. If you are aware of it, please input below and if you are not aware, type *not known*")
-        diseas = st.radio("Is your disease known?", options=["not known", "known"])
-        if diseas == "known":
-            st.text_input("Name of disease", placeholder="type here")
+# On real disease if known
+st.subheader("Disease History")
+st.markdown("We would love to know your real disease to see how well our model did.")
+diseas = st.radio("Is your disease known?", options=["not known", "known"])
+if diseas != "not known":
+    st.text_input("Name of disease", placeholder="type here")
 
-    # On medications, if on any
-        st.subheader("Medication History?")
-        st.markdown("If you are on any medication, please list out the drugs below. E.g  *Paracetamol, Vitamin C and Loratadine*.")
-        drugs = st.radio("Are you on any drugs ?",options=["no","yes"])
-        if drugs == "yes":
-            st.text_input("Name of drugs", placeholder="type here")
+# On medications, if on any
+st.subheader("Medication History?")
+st.markdown("If you are on any medication, please list out the drugs below. E.g  *Paracetamol, Vitamin C and Loratadine*.")
+drugs = st.radio("Are you on any drugs ?",options=["no","yes"])
+if drugs == "yes":
+    st.text_input("Name of drugs", placeholder="type here")
 
-        summary = (f"""
-            Thank you for using our predictor model. 
-            Here is a summary
-            Your symptoms are: {options} 
-            Your predicted disease is {d}, your real disease is {diseas} and you are on {drugs} drugs
-            
-                Description of predicted disease: {descr}
-                Precautions to take: 1. {prec_1}
-                                    2. {prec_2}
-                                    3. {prec_3} 
-                                    4. {prec_4}
-    """)
-        st.markdown("download your summary below")
-        st.download_button("Download your report", data=summary)
+summary = (f"""
+    Thank you for using our predictor model. 
+    Here is a summary
+    Your symptoms are: {options} 
+    
+    Your predicted disease is {d}, your real disease is {diseas} and you are on {drugs} drugs
+    
+    Description of predicted disease: {descr}
+    
+    Precautions to take: 1. {prec_1}
+                            2. {prec_2}
+                            3. {prec_3} 
+                            4. {prec_4}
+""")
+st.markdown("download your summary below")
+st.download_button("Download your report", data=summary)
 st.markdown("Thank you for trying out the model!")
+st.markdown("Want to know how I built this? Check out the codes here")
+# else:
+    #     st.markdown("Thank you for trying out the model!")
+    #     st.markdown("Want to know how I built this? Check out the codes here")
