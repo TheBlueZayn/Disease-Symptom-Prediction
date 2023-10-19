@@ -118,7 +118,7 @@ summary_early =  (f"""
 st.subheader("**Would you like to answer some questions?**")
 
 st.markdown("If no, press the button below")
-st.download_button("Download your report", data=summary_early, key="early")
+st.download_button("Download your report", data=summary_early, key="early", mime="text/plain", file_name="My_prediction.txt")
 
 # On real disease if known
 st.subheader("Disease History")
@@ -149,7 +149,7 @@ summary = (f"""
                             4. {prec_4}
 """)
 st.markdown("download your summary below")
-st.download_button("Download your report", data=summary, key="late")
+st.download_button("Download your report", data=summary, key="late",  mime="text/plain", file_name="My_prediction.txt")
 st.markdown("Thank you for trying out the model!")
 st.markdown("Want to know how I built this? Check out the codes [here](https://disease-symptom-prediction-kqpnytmyfqmmtbjyxlvkcy.streamlit.app/)")
 # else:
