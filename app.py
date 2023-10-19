@@ -16,7 +16,7 @@ ml_model=load('rf_model.joblib')
 df = pd.read_csv("empty_df.csv")
 df_2 = pd.read_csv("symptom_Description.csv")
 df_3 = pd.read_csv("symptom_precaution.csv")
-
+updated_data = pd.read_csv("updated_data.csv")
 
 
 
@@ -126,15 +126,15 @@ st.subheader("Disease History")
 st.markdown("We would love to know your real disease to see how well our model did.")
 diseas = st.radio("Is your disease known?", options=["not known", "known"])
 if diseas != "not known":
-    st.text_input("Name of disease", placeholder="type here")
+    diseas = st.text_input("Name of disease", placeholder="type here")
 
 # On medications, if on any
 st.subheader("Medication History?")
 st.markdown("If you are on any medication, please list out the drugs below. E.g  *Paracetamol, Vitamin C and Loratadine*.")
 drugs = st.radio("Are you on any drugs ?",options=["no","yes"])
 if drugs == "yes":
-    st.text_input("Name of drugs", placeholder="type here")
-
+    drugs = st.text_input("Name of drugs", placeholder="type here")
+#st.write("")
 summary = (f"""
     Thank you for using our predictor model. 
     Here is a summary
@@ -149,10 +149,34 @@ summary = (f"""
                             3. {prec_3} 
                             4. {prec_4}
 """)
-st.markdown("download your summary below")
-st.download_button("Download your report", data=summary, key="late",  mime="text/plain", file_name="My_prediction.txt")
+
+st.markdown("Download your summary below")
+st.download_button("Download", data=summary, key="late",  mime="text/plain", file_name="My_prediction.txt")
+
+# Create variables
+real_disease = diseas
+predicted_disease = d
+drugs_on = drugs
+user_symptoms = options
+
+# Make into a dictionary
+dic = {"symptoms": user_symptoms,"predicted_disease" :predicted_disease,  "disease": real_disease, "drugs_on": drugs}
+
+# Create Dataframe
+data = pd.DataFrame(dic, index=range(len(options)))
+
+st.write(data)
+# Concatenate
+
+updated_data = pd.concat([updated_data,data])
+#st.write(updated_data)
+
+updated_data.to_csv("updated_data.csv")
+
 st.markdown("Thank you for trying out the model!")
 #st.markdown("Want to know how I built this? Check out the codes [here](https://disease-symptom-prediction-kqpnytmyfqmmtbjyxlvkcy.streamlit.app/)")
+
+
 # else:
     #     st.markdown("Thank you for trying out the model!")
     #     st.markdown("Want to know how I built this? Check out the codes here")
