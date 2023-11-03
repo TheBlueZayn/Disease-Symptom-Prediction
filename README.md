@@ -14,9 +14,9 @@ I got suitable data from kaggle for the symptoms and their diseases, a descripti
 - Model building, optimizing and saving
 - Uploading on the web using Streamlit
 
-[sympt.ipynb]() contains the codes for analysis
+[sympt.ipynb](https://github.com/TheBlueZayn/Disease-Symptom-Prediction/blob/main/sympt.ipynb) contains the codes for analysis
 
-[app.py]() contains the codes to deploy on Stramlit
+[app.py](https://github.com/TheBlueZayn/Disease-Symptom-Prediction/blob/main/app.py) contains the codes to deploy on Stramlit
 
 The following libraries were used;
 - Pandas for data loading and analysis
