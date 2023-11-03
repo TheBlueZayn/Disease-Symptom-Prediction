@@ -16,7 +16,7 @@ ml_model=load('rf_model.joblib')
 df = pd.read_csv("empty_df.csv")
 df_2 = pd.read_csv("symptom_Description.csv")
 df_3 = pd.read_csv("symptom_precaution.csv")
-updated_data = pd.read_csv("updated_data.csv")
+#updated_data = pd.read_csv("updated_data.csv")
 
 
 image = Image.open("ml.jpg")
@@ -62,7 +62,6 @@ with symptomp:
 
 
 #Display predicted disease
-# st.subheader("Predicted Disease")
 
 df_list = df.iloc[0].to_list()
 df_arr = np.array(df_list)
@@ -98,9 +97,7 @@ if st.sidebar.button('Predict'):
 else:
     st.sidebar.markdown("Waiting for your symptoms!")  
 
-# Ask question
-# questions = st.container()
-# with questions:
+# Create summary at the early stage 
 summary_early =  (f"""
     Thank you for using our predictor model. 
     Here is a summary
@@ -132,7 +129,8 @@ st.markdown("If you are on any medication, please list out the drugs below. E.g 
 drugs = st.radio("Are you on any drugs ?",options=["no","yes"])
 if drugs == "yes":
     drugs = st.text_input("Name of drugs", placeholder="type here")
-#st.write("")
+
+# Summary at the end of questions
 summary = (f"""
     Thank you for using our predictor model. 
     Here is a summary
@@ -163,7 +161,7 @@ dic = {"symptoms": user_symptoms,"predicted_disease" :predicted_disease,  "disea
 # Create Dataframe
 data = pd.DataFrame(dic, index=range(len(options)))
 
-#st.write(data)
+
 # Concatenate
 
 updated = pd.concat([updated_data,data])
@@ -172,9 +170,6 @@ updated = pd.concat([updated_data,data])
 updated.to_csv("updated_data.csv")
 
 st.markdown("Thank you for trying out the model!")
-#st.markdown("Want to know how this was built? Check out the codes [here](https://github.com/TheBlueZayn/Disease-Symptom-Prediction)")
+st.markdown("Want to know how this was built? Check out the codes [here](https://github.com/TheBlueZayn/Disease-Symptom-Prediction)")
 
 
-# else:
-    #     st.markdown("Thank you for trying out the model!")
-    #     st.markdown("Want to know how I built this? Check out the codes here")
