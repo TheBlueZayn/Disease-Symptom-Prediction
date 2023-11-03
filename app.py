@@ -149,25 +149,25 @@ summary = (f"""
 st.markdown("Download your summary below")
 st.download_button("Download", data=summary, key="late",  mime="text/plain", file_name="My_prediction.txt")
 
-# Create variables
-real_disease = diseas
-predicted_disease = d
-drugs_on = drugs
-user_symptoms = options
+# # Create variables
+# real_disease = diseas
+# predicted_disease = d
+# drugs_on = drugs
+# user_symptoms = options
 
-# Make into a dictionary
-dic = {"symptoms": user_symptoms,"predicted_disease" :predicted_disease,  "disease": real_disease, "drugs_on": drugs}
+# # Make into a dictionary
+# dic = {"symptoms": user_symptoms,"predicted_disease" :predicted_disease,  "disease": real_disease, "drugs_on": drugs}
 
 # Create Dataframe
-data = pd.DataFrame(dic, index=range(len(options)))
+#data = pd.DataFrame(dic, index=range(len(options)))
 
 
 # Concatenate
 
-updated = pd.concat([updated_data,data])
+#updated = pd.concat([updated_data,data])
 #st.write(updated_data)
 
-updated.to_csv("updated_data.csv")
+#updated.to_csv("updated_data.csv")
 
 st.markdown("Thank you for trying out the model!")
 st.markdown("Want to know how this was built? Check out the codes [here](https://github.com/TheBlueZayn/Disease-Symptom-Prediction)")
